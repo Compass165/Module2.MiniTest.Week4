@@ -125,7 +125,7 @@ public class Index {
             int yearOfBirth = scanner1.nextInt();
             System.out.println("Mời nhập số CMND khách hàng: ");
             int idCard = scanner1.nextInt();
-            new HotelManager().edit(listPeople, new People(fullName, yearOfBirth, idCard));
+
 
             System.out.println("Mời nhập số ngày ở: ");
             int days = scanner1.nextInt();
@@ -133,7 +133,17 @@ public class Index {
             String typeOfRoom = scanner1.nextLine();
             System.out.println("Mời nhập giá phòng: ");
             int price = scanner1.nextInt();
+
+            new HotelManager().edit(index, listOrder, new Order(days, typeOfRoom, price, new People(fullName, yearOfBirth, idCard)));
+        }catch (InputMismatchException e){
+                System.out.println("Nhập sai kiểu dữ liệu");
+            }
         }
+
+    private static void remove(List list) {
+        System.out.println("Mời nhập index cần xóa:");
+        int index = scanner.nextInt();
+        new HotelManager().remove(index, list);
     }
 
 }
