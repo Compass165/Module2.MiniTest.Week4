@@ -41,15 +41,15 @@ public class People {
         this.idCard = idCard;
     }
 
-    public void inputGuestInformation() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập họ tên khách hàng: ");
-        fullName = scanner.nextLine();
-        System.out.print("Nhập năm sinh: ");
-        yearOfBirth = scanner.nextInt();
-        System.out.print("Nhập số chứng minh nhân dân: ");
-        idCard = scanner.nextInt();
-    }
+//    public void inputGuestInformation() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Nhập họ tên khách hàng: ");
+//        fullName = scanner.nextLine();
+//        System.out.print("Nhập năm sinh: ");
+//        yearOfBirth = scanner.nextInt();
+//        System.out.print("Nhập số chứng minh nhân dân: ");
+//        idCard = scanner.nextInt();
+//    }
 
 
     @Override
