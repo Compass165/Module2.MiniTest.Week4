@@ -48,18 +48,14 @@ public class CSV {
 //        peopleList.add(new People("Luong",1998,333333));
 //        peopleList.add(new People("Huy",1999,444444));
 //        peopleList.add(new People("Hang",1991,555555));
-        People p1 = new People("Banh",1998,111111);
-        People p2 = new People("Phong",1999,222222);
-        People p3 = new People("Luong",1998,333333);
-        People p4 = new People("Huy",1999,444444);
-        People p5 = new People("Hang",1991,555555);
 
         List<Order> orderList = new ArrayList<>();
-        orderList.add(new Order(3,"Vip",5000,p1));
-        orderList.add(new Order(4,"Vip",5000,p2));
-        orderList.add(new Order(10,"Normal",2500,p3));
-        orderList.add(new Order(1,"Normal",2500,p4));
-        orderList.add(new Order(2,"Vip",5000,p5));
+        orderList.add(new Order("Viet Cong 666", 1998, 111111, 2, "VIP", 5000));
+        orderList.add(new Order("Luon", 1998, 222222, 4, "WC", 500));
+        orderList.add(new Order("Hokage", 1999, 333333, 10, "VIP", 5000));
+        orderList.add(new Order("Shinobi", 1999, 444444, 3, "NORMAL", 2000));
+        orderList.add(new Order("Cha xu", 1996, 555555, 6, "VIP", 5000));
+
 
         csv.writeFile(orderList,"E:\\IntelliJ\\Module2.Minitest.Week4\\MiniTest.Week4\\src\\storage\\order.dat");
         List<Order> list = csv.readFile("E:\\IntelliJ\\Module2.Minitest.Week4\\MiniTest.Week4\\src\\storage\\order.dat");

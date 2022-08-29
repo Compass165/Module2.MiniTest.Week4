@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class People {
+public class People implements Serializable {
 
     private String fullName;
     private int yearOfBirth;

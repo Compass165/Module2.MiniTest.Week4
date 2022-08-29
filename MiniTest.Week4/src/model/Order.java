@@ -3,18 +3,19 @@ package model;
 
 import java.io.Serializable;
 
-public class Order implements Serializable {
+public class Order extends People implements Serializable {
     private int days;
     private String typeOfRoom;
     private int price;
-    People Guest;
 
-    public Order(int days, String typeOfRoom, int price, People guest) {
+
+    public Order(String fullName, int yearOfBirth, int idCard, int days, String typeOfRoom, int price) {
+        super(fullName, yearOfBirth, idCard);
         this.days = days;
         this.typeOfRoom = typeOfRoom;
         this.price = price;
-        Guest = guest;
     }
+
 
     public Order() {
     }
@@ -43,21 +44,14 @@ public class Order implements Serializable {
         this.price = price;
     }
 
-    public People getGuest() {
-        return Guest;
-    }
-
-    public void setGuest(People guest) {
-        Guest = guest;
-    }
 
     @Override
     public String toString() {
         return "Order{" +
-                "days=" + days +
+                " name= " +getFullName() +
+                " days= " + days +
                 ", typeOfRoom='" + typeOfRoom + '\'' +
                 ", price=" + price +
-                ", Guest=" + Guest +
-                '}';
+                " }";
     }
 }

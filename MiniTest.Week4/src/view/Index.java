@@ -86,13 +86,13 @@ public class Index {
         System.out.println("Mời nhập Tên khách hàng: ");
         String id = scanner.nextLine();
         for (int i = 0; i < list.size(); i++) {
-            if (id.equals(list.get(i).getGuest().getFullName())) {
-                System.out.println("Tìm thấy :" + list.get(i).getGuest());
+            if (id.equals(list.get(i).getFullName())) {
+                System.out.println("Tìm thấy :" + list.get(i).getFullName());
             }
         }
     }
 
-    private static void add(List listPeople, List listOrder) {
+    private static void add(List listOrder) {
         try {
             System.out.println("Mời nhập tên khách hàng: ");
             String fullName = scanner1.nextLine();
@@ -100,22 +100,22 @@ public class Index {
             int yearOfBirth = scanner1.nextInt();
             System.out.println("Mời nhập số CMND khách hàng: ");
             int idCard = scanner1.nextInt();
-            new HotelManager().add(listPeople, new People(fullName, yearOfBirth, idCard));
 
             System.out.println("Mời nhập số ngày ở: ");
             int days = scanner1.nextInt();
+            scanner1.nextLine();
             System.out.println("Mời nhập hạng phòng: ");
             String typeOfRoom = scanner1.nextLine();
             System.out.println("Mời nhập giá phòng: ");
             int price = scanner1.nextInt();
 
-            new HotelManager().add(listOrder, new Order(days, typeOfRoom, price, new People(fullName, yearOfBirth, idCard)));
+            new HotelManager().add(listOrder, new Order(fullName, yearOfBirth, idCard, days, typeOfRoom, price));
         } catch (InputMismatchException e) {
             System.out.println("Nhập sai kiểu dữ liệu:");
         }
     }
 
-    private static void edit(List listPeople, List listOrder) {
+    private static void edit(List listOrder) {
         try {
             System.out.println("Mời nhập index khách hàng cần sửa: ");
             int index = scanner.nextInt();
@@ -129,12 +129,14 @@ public class Index {
 
             System.out.println("Mời nhập số ngày ở: ");
             int days = scanner1.nextInt();
+            scanner1.nextLine();
             System.out.println("Mời nhập hạng phòng: ");
             String typeOfRoom = scanner1.nextLine();
+            scanner1.nextLine();
             System.out.println("Mời nhập giá phòng: ");
             int price = scanner1.nextInt();
 
-            new HotelManager().edit(index, listOrder, new Order(days, typeOfRoom, price, new People(fullName, yearOfBirth, idCard)));
+            new HotelManager().edit(index, listOrder, new Order(fullName, yearOfBirth, idCard, days, typeOfRoom, price));
         }catch (InputMismatchException e){
                 System.out.println("Nhập sai kiểu dữ liệu");
             }
