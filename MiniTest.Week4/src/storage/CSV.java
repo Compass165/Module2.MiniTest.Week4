@@ -1,7 +1,5 @@
 package storage;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import model.Order;
-import model.People;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,6 +9,9 @@ public class CSV {
         try {
             FileOutputStream fos = new FileOutputStream(pathFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
+//            for (Object x: list) {
+//                System.out.println(x);
+//            }
             oos.writeObject(list);
             fos.close();
             oos.close();
@@ -42,12 +43,7 @@ public class CSV {
 
     public static void main(String[] args) {
         CSV csv = new CSV();
-//        List<People> peopleList = new ArrayList<>();
-//        peopleList.add(new People("Banh",1998,111111));
-//        peopleList.add(new People("Phong",1999,222222));
-//        peopleList.add(new People("Luong",1998,333333));
-//        peopleList.add(new People("Huy",1999,444444));
-//        peopleList.add(new People("Hang",1991,555555));
+
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(new Order("Viet Cong 666", 1998, 111111, 2, "VIP", 5000));

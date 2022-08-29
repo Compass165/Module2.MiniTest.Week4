@@ -1,6 +1,5 @@
 package view;
 import controller.HotelManager;
-import model.People;
 import model.Order;
 import storage.CSV;
 
@@ -65,6 +64,10 @@ public class Index {
                     break;
                 case READ:
                     orderList = new CSV().readFile(pathFile);
+                    for (Object x: orderList
+                         ) {
+                        System.out.println(x);
+                    }
                     break;
                 case WRITE:
                     new CSV().writeFile(orderList, pathFile);
